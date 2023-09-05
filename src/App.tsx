@@ -1,3 +1,4 @@
+import './App.css'
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-     <h1>User Finder</h1>
+     <h1>List Users</h1>
     </>
   )
 }
