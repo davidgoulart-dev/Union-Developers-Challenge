@@ -1,7 +1,8 @@
+import "./UsersTable.scss"
 export const UsersTable = ( ) => {
     return (
-        <>
-        <thead>
+        <div className="table-users">
+        <thead >
           <tr>
             <th>ID</th>
             <th>First Name</th>
@@ -28,8 +29,8 @@ export const UsersTable = ( ) => {
 
         
         
-        </>
+        </div>
     )
 }
 
-export default {UsersTable}
+export default UsersTable

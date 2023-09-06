@@ -1,4 +1,5 @@
 import './App.css'
+import UsersTable from './components/UsersTable/UsersTable'
 
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
     <>
      <h1>List Users</h1>
      <table>
-      
+        <UsersTable/>
      </table>
     </>
   )
