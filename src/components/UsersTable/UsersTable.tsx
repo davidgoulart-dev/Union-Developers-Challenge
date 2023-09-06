@@ -16,11 +16,12 @@ interface User {
   login: {
     uuid: string;
   }
-  // Adicione outras propriedades conforme necessário
+ 
 }
 
 export const UsersTable = () => {
-  const { data } = useQuery(['users'], () => api.getUsers());
+  const { data } = useQuery(['users'], () => api.getUsers(10));
+
 
   return (
     <div className="table-users">
