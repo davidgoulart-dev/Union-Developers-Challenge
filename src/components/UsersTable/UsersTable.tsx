@@ -2,6 +2,7 @@ import "./UsersTable.scss";
 import { api } from "../../api/api";
 import { useQuery } from "react-query";
 
+
 interface User {
   uuid: string;
   name: {
@@ -21,10 +22,13 @@ interface User {
 
 export const UsersTable = () => {
   const { data } = useQuery(['users'], () => api.getUsers(10));
+  
 
+  
 
   return (
     <div className="table-users">
+      
       <thead>
         <tr>
           <th>ID</th>
