@@ -1,6 +1,7 @@
 import "./UsersTable.scss";
 import { api } from "../../api/api";
 import { useQuery } from "react-query";
+import { useState } from "react";
 
 
 interface User {
@@ -21,7 +22,8 @@ interface User {
 }
 
 export const UsersTable = () => {
-  const { data } = useQuery(['users'], () => api.getUsers(10));
+  const [currentPage, setCurrentPage] = useState(1);
+  const { data } = useQuery(['users', currentPage], () => api.getUsers(10, currentPage));
   
 
   
@@ -53,7 +55,26 @@ export const UsersTable = () => {
           </tr>
         ))}
       </tbody>
+      <div className="pagination">
+      <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+        Anterior
+      </button>
+      {[1, 2, 3, 4, 5].map((pageNum) => (
+        <button 
+          key={pageNum}
+          onClick={() => setCurrentPage(pageNum)}
+          className={currentPage === pageNum ? "active" : ""}
+        >
+          {pageNum}
+        </button>
+      ))}
+      <button onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === 5}>
+        Próximo
+      </button>
     </div>
+    
+    </div>
+    
   );
 }
 
