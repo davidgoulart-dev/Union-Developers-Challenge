@@ -2,6 +2,8 @@ import "./UsersTable.scss";
 import { api } from "../../api/api";
 import { useQuery } from "react-query";
 import { useState } from "react";
+import SearchInput from "./SearchInput";
+import PaginationButtons from "./PaginationButtons";
 
 
 interface User {
@@ -24,13 +26,18 @@ interface User {
 export const UsersTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { data } = useQuery(['users', currentPage], () => api.getUsers(10, currentPage));
-  
+  const [searchTerm, setSearchTerm] = useState("");
+  const filteredUsers = searchTerm ? 
+  (data?.results?.filter((user: User) => 
+    `${user.name.first} ${user.name.last}`.toLowerCase().includes(searchTerm.toLowerCase())
+  ) || []) 
+: (data?.results || []);
 
   
 
   return (
     <div className="table-users">
-      
+       <SearchInput value={searchTerm} onChange={setSearchTerm} />
       <thead>
         <tr>
           <th>ID</th>
@@ -43,7 +50,7 @@ export const UsersTable = () => {
         </tr>
       </thead>
       <tbody>
-        {data?.results?.map((user: User) => (
+        {filteredUsers.map((user: User) => (
           <tr key={user.uuid}>
             <td>{user.login.uuid}</td>
             <td>{user.name.first}</td>
@@ -55,23 +62,7 @@ export const UsersTable = () => {
           </tr>
         ))}
       </tbody>
-      <div className="pagination">
-      <button className="prev" onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-        
-      </button>
-      {[1, 2, 3, 4, 5].map((pageNum) => (
-        <button 
-          key={pageNum}
-          onClick={() => setCurrentPage(pageNum)}
-          className={currentPage === pageNum ? "active" : ""}
-        >
-          {pageNum}
-        </button>
-      ))}
-      <button className="next" onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === 5}>
-        
-      </button>
-    </div>
+      <PaginationButtons currentPage={currentPage} totalPages={5} onPageChange={setCurrentPage} />
     
     </div>
     
