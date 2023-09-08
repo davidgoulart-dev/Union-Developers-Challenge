@@ -1,4 +1,4 @@
-
+import "./UsersTable.scss";
 
 interface SearchInputProps {
   value: string;
@@ -9,9 +9,10 @@ const SearchInput: React.FC<SearchInputProps> = ({ value, onChange }) => {
   return (
     <input 
       type="text" 
-      placeholder="Search by user name..." 
+      placeholder="Search user...." 
       value={value} 
       onChange={(e) => onChange(e.target.value)}
+      className="Search-UsersTable"
     />
   );
 }

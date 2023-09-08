@@ -37,7 +37,7 @@ export const UsersTable = () => {
 
   return (
     <div className="table-users">
-       <SearchInput value={searchTerm} onChange={setSearchTerm} />
+       <SearchInput  value={searchTerm} onChange={setSearchTerm} />
       <thead>
         <tr>
           <th>ID</th>
