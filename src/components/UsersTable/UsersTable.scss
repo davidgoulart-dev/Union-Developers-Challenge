@@ -36,5 +36,58 @@
         color: #D6D6D6;
         ;
     }
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        width: 602px;
+        height: 80px;
+    
+        button {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid ;
+            border-color: #811AC0;
+            background-color: transparent;
+            color: white;
+            font-family: Poppins;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            
+            &:hover {
+                background-color:#811AC0;
+            }
+    
+            &.active {
+                background-color: #811AC0;
+            }
+    
+            &:not(:last-child) {
+                margin-right: 10px;
+            }
+        }
+   
+        button.prev, button.next {
+            width: 80px;
+            height: 80px;
+            
+        }
+    
+        button.prev:before {
+            content: "<";
+        }
+    
+        button.next:before {
+            content: ">";
+        }
+   
+   
+   
+    }
+
+
 
 }

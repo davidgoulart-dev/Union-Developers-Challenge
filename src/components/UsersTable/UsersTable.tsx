@@ -56,8 +56,8 @@ export const UsersTable = () => {
         ))}
       </tbody>
       <div className="pagination">
-      <button onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
-        Anterior
+      <button className="prev" onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))} disabled={currentPage === 1}>
+        
       </button>
       {[1, 2, 3, 4, 5].map((pageNum) => (
         <button 
@@ -68,8 +68,8 @@ export const UsersTable = () => {
           {pageNum}
         </button>
       ))}
-      <button onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === 5}>
-        Próximo
+      <button className="next" onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === 5}>
+        
       </button>
     </div>
     
