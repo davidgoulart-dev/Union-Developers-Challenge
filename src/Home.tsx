@@ -1,11 +1,12 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
-import './App.css'
+import './Home.css'
 import UsersTable from './components/UsersTable/UsersTable'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
+
 const queryClient = new QueryClient();
 
-function App() {
+function Home() {
   
 
   return (
@@ -21,4 +22,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
