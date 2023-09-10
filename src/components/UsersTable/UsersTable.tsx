@@ -4,6 +4,7 @@ import { useQuery } from "react-query";
 import { useState } from "react";
 import SearchInput from "./SearchInput";
 import PaginationButtons from "./PaginationButtons";
+import { Link } from 'react-router-dom';
 
 
 interface User {
@@ -20,24 +21,24 @@ interface User {
   login: {
     uuid: string;
   }
- 
+
 }
 
 export const UsersTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { data } = useQuery(['users', currentPage], () => api.getUsers(10, currentPage));
   const [searchTerm, setSearchTerm] = useState("");
-  const filteredUsers = searchTerm ? 
-  (data?.results?.filter((user: User) => 
-    `${user.name.first} ${user.name.last}`.toLowerCase().includes(searchTerm.toLowerCase())
-  ) || []) 
-: (data?.results || []);
+  const filteredUsers = searchTerm ?
+    (data?.results?.filter((user: User) =>
+      `${user.name.first} ${user.name.last}`.toLowerCase().includes(searchTerm.toLowerCase())
+    ) || [])
+    : (data?.results || []);
 
-  
+
 
   return (
     <div className="table-users">
-       <SearchInput  value={searchTerm} onChange={setSearchTerm} />
+      <SearchInput value={searchTerm} onChange={setSearchTerm} />
       <thead>
         <tr>
           <th>ID</th>
@@ -58,14 +59,16 @@ export const UsersTable = () => {
             <td>{user.name.title}</td>
             <td>{new Date(user.dob.date).toLocaleDateString()}</td>
             <td>{user.dob.age}</td>
-            <td>View profile</td>
+            <td>
+              <Link to={`/user/${user.uuid}`}>View profile</Link>
+            </td>
           </tr>
         ))}
       </tbody>
       <PaginationButtons currentPage={currentPage} totalPages={5} onPageChange={setCurrentPage} />
-    
+
     </div>
-    
+
   );
 }
 
