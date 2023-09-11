@@ -1,0 +1,32 @@
+.user-photo-wrapper {
+    position: relative;
+    top: 65px;
+    left: 0px;
+    text-align: center;
+}
+
+.user-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;   
+}
+
+.user-name {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0em;
+    color: #ffffff;
+    margin: 10px 0;
+}
+
+.user-title {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    color: #C3C3C3;
+}

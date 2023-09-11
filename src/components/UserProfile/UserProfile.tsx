@@ -2,12 +2,10 @@ import "./UserProfile.scss"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from "../../api/api";
-
-
-
+import UserAvatar from "./UserAvatar";
 
 interface UserParams extends Record<string, string | undefined> {
-    uuid: string;
+    uuid?: string;
 }
 
 const UserProfile: React.FC = () => {
@@ -26,13 +24,15 @@ const UserProfile: React.FC = () => {
         fetchUserData();
     }, [uuid]);
 
+    if (!uuid || !userData) return null;
+
     return (
 
         <div>
 
 
 
-            <h1>Perfil</h1>
+            <UserAvatar  user={userData} />
             <div className="Profile">
                 <div className="tabs">
                     <button className={activeTab === 'info' ? 'active' : ''} onClick={() => setActiveTab('info')}>Info</button>
