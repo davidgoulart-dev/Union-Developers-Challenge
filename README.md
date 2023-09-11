@@ -2,7 +2,9 @@
 
 O Union Developers Challenge é um projeto criado para integrar o time de desenvolvedores Júnior para fins de aprendizado.
 
-![INSIRA UM GIF OU IMAGEM AQUI](LINK_PARA_O_GIF_OU_IMAGEM)
+![Imagem 1](https://i.imgur.com/SEU-LINK-IMAGEM-1.jpg)
+![Imagem 2](https://i.imgur.com/SEU-LINK-IMAGEM-2.jpg)
+![Imagem 3](https://i.imgur.com/SEU-LINK-IMAGEM-3.jpg)
 
 ## Índice
 
@@ -39,8 +41,8 @@ npm run dev
 ---
 
 ## Características, Contribuições e Licença
-
 ```markdown
+
 ## Características
 
 - Busca e visualização de usuários.
