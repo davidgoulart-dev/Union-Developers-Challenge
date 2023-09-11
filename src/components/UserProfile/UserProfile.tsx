@@ -9,7 +9,7 @@ interface UserParams extends Record<string, string | undefined> {
 
 const UserProfile: React.FC = () => {
     const { uuid } = useParams<UserParams>();
-
+    const [activeTab, setActiveTab] = useState<'info' | 'location' | 'login'>('info');
     const [userData, setUserData] = useState<any>(null);
 
     useEffect(() => {
