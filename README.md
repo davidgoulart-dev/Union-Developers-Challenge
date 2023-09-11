@@ -1,27 +1,56 @@
-# React + TypeScript + Vite
+# Union Developers Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O Union Developers Challenge é um projeto criado para integrar o time de desenvolvedores Júnior para fins de aprendizado.
 
-Currently, two official plugins are available:
+![INSIRA UM GIF OU IMAGEM AQUI](LINK_PARA_O_GIF_OU_IMAGEM)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Índice
 
-## Expanding the ESLint configuration
+- [Tecnologias](#tecnologias)
+- [Instalação e Execução](#instalação-e-execução)
+- [Características](#características)
+- [Contribuições](#contribuições)
+- [Licença](#licença)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias
 
-- Configure the top-level `parserOptions` property like this:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- React
+- TypeScript
+- Axios
+- React Query: utilizado para gerenciar e sincronizar o estado do servidor no cliente.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Instalação e Execução
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/davidgoulart-dev/Union-Developers-Challenge.git
+cd Union-Developers-Challenge
+
+2. Instale as dependencias:
+npm install
+
+3. Execute o Projeto:
+npm run dev
+
+
+---
+
+## Características, Contribuições e Licença
+
+```markdown
+## Características
+
+- Busca e visualização de usuários.
+- Filtragem de usuários por nome.
+- Detalhamento do perfil do usuário.
+
+## Contribuições
+
+Pull requests são bem-vindos! Para mudanças maiores, abra um problema primeiro para discutir o que você gostaria de mudar. Certifique-se de testar suas mudanças antes de enviar.
+
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)
