@@ -2,9 +2,9 @@
 
 O Union Developers Challenge é um projeto criado para integrar o time de desenvolvedores Júnior para fins de aprendizado.
 
-![Imagem 1](https://imgur.com/a/Gaxyxmv)
-![Imagem 2](https://imgur.com/a/fwBACDH)
-![Imagem 3](https://imgur.com/a/Z5KjWUL)
+![Imagem 1](https://imgur.com/a/Gaxyxmv.jpg)
+![Imagem 2](https://imgur.com/a/fwBACDH.jpg)
+![Imagem 3](https://imgur.com/a/Z5KjWUL.jpg)
 
 ## Índice
 
