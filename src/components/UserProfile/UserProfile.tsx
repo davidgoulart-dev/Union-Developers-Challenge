@@ -1,6 +1,9 @@
+import "./UserProfile.scss"
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from "../../api/api";
+
+
 
 
 interface UserParams extends Record<string, string | undefined> {
@@ -24,14 +27,45 @@ const UserProfile: React.FC = () => {
     }, [uuid]);
 
     return (
+
         <div>
+
+
+
             <h1>Perfil</h1>
-            {userData && (
-                <div>
-                    <p>Name: {userData.name.first} {userData.name.last}</p>
-                    <p>Email: {userData.email}</p>
+            <div className="Profile">
+                <div className="tabs">
+                    <button className={activeTab === 'info' ? 'active' : ''} onClick={() => setActiveTab('info')}>Info</button>
+                    <button className={activeTab === 'location' ? 'active' : ''} onClick={() => setActiveTab('location')}>Location</button>
+                    <button className={activeTab === 'login' ? 'active' : ''} onClick={() => setActiveTab('login')}>Login</button>
                 </div>
-            )}
+                <div className="tab-content">
+                    {activeTab === 'info' && (
+                        <div>
+                            <p>Name: {userData.name.first} {userData.name.last}</p>
+                            <p>Email: {userData.email}</p>
+                        </div>
+                    )}
+                    {activeTab === 'location' && (
+                        <div>
+                            <p>Street: {userData.location.street.number} {userData.location.street.name}</p>
+                            <p>City: {userData.location.city}</p>
+                            <p>State: {userData.location.state}</p>
+                            <p>Country: {userData.location.country}</p>
+                            <p>Postcode: {userData.location.postcode}</p>
+                            <p>Coordinates: {userData.location.coordinates.latitude}, {userData.location.coordinates.longitude}</p>
+                            <p>Timezone: {userData.location.timezone.offset} - {userData.location.timezone.description}</p>
+                        </div>
+                    )}
+                    {activeTab === 'login' && (
+                        <div>
+                            <p>Username: {userData.login.username}</p>
+                            <p>Email: {userData.email}</p>
+                            <p>MD5: {userData.login.md5}</p>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

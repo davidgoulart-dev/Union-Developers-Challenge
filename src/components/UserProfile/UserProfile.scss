@@ -1,0 +1,20 @@
+.tabs button {
+    background: none;         
+    border: none;      
+         
+           
+    color: white;             
+    padding: 10px 20px;       
+    margin-right: 15px;       
+    cursor: pointer;          
+    outline: none;            
+    transition: border-width 0.3s;  
+}
+
+.tabs button.active {
+    border-bottom: 4px solid pink;  
+}
+.Profile {
+    margin-top: 362px;
+    margin-left:41%;
+}
