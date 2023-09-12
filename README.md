@@ -22,7 +22,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - TypeScript
 - Axios
 - React Query: utilizado para gerenciar e sincronizar o estado do servidor no cliente.
-
+- Framer Motion
 ## Instalação e Execução
 
 1. Clone o repositório:
