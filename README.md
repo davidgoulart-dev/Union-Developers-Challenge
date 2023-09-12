@@ -2,10 +2,9 @@
 
 O Union Developers Challenge é um projeto criado para integrar o time de desenvolvedores Júnior para fins de aprendizado.
 
-![union1](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/e32ae18b-51da-487d-bd27-2add42f1edfe)
-![union2](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/41c9ca40-b0f3-48cd-bc25-19e25a8635b2)
-![union3](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/a387d347-9f45-4bf5-82fa-095f443b5ee2)
-
+![union2](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/b8895ed6-3032-4e4b-b4d4-5239f6d49519)
+![union](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/41c9ca40-b0f3-48cd-bc25-19e25a8635b2)
+![union3](https://github.com/davidgoulart-dev/Union-Developers-Challenge/assets/119085211/4fa3fee3-61fa-4b99-8145-798a8cc45545)
 
 ## Índice
 
