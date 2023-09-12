@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from "../../api/api";
 import UserAvatar from "./UserAvatar";
+import { Link } from 'react-router-dom';
 
 interface UserParams extends Record<string, string | undefined> {
     uuid?: string;
@@ -30,7 +31,7 @@ const UserProfile: React.FC = () => {
 
         <div>
 
-
+<Link className="back-button" to={`/`}>Back</Link>
 
             <UserAvatar  user={userData} />
             <div className="Profile">
