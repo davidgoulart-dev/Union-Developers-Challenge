@@ -31,9 +31,9 @@ const UserProfile: React.FC = () => {
 
         <div>
 
-<Link className="back-button" to={`/`}>Back</Link>
+            <Link className="back-button" to={`/`}>Back</Link>
 
-            <UserAvatar  user={userData} />
+            <UserAvatar user={userData} />
             <div className="Profile">
                 <div className="tabs">
                     <button className={activeTab === 'info' ? 'active' : ''} onClick={() => setActiveTab('info')}>Info</button>
@@ -43,29 +43,86 @@ const UserProfile: React.FC = () => {
                 <div className="tab-content">
                     {activeTab === 'info' && (
                         <div>
-                            <p>Name: {userData.name.first} {userData.name.last}</p>
-                            <p>Email: {userData.email}</p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">First Name:</span> {userData.name.first}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Last Name:</span> {userData.name.last}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Email:</span> {userData.email}
+                                </span>
+                            </p>
                         </div>
                     )}
                     {activeTab === 'location' && (
                         <div>
-                            <p>Street: {userData.location.street.number} {userData.location.street.name}</p>
-                            <p>City: {userData.location.city}</p>
-                            <p>State: {userData.location.state}</p>
-                            <p>Country: {userData.location.country}</p>
-                            <p>Postcode: {userData.location.postcode}</p>
-                            <p>Coordinates: {userData.location.coordinates.latitude}, {userData.location.coordinates.longitude}</p>
-                            <p>Timezone: {userData.location.timezone.offset} - {userData.location.timezone.description}</p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Street:</span>{' '}
+                                    {userData.location.street.number} {userData.location.street.name}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">City:</span> {userData.location.city}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">State:</span> {userData.location.state}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Country:</span> {userData.location.country}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Postcode:</span> {userData.location.postcode}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Coordinates:</span>{' '}
+                                    {userData.location.coordinates.latitude}, {userData.location.coordinates.longitude}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="api-info">
+                                    <span className="info-label">Timezone:</span>{' '}
+                                    {userData.location.timezone.offset} - {userData.location.timezone.description}
+                                </span>
+                            </p>
                         </div>
                     )}
                     {activeTab === 'login' && (
                         <div>
-                            <p>Username: {userData.login.username}</p>
-                            <p>Email: {userData.email}</p>
-                            <p>MD5: {userData.login.md5}</p>
+                            <p>
+                                <span className="user-info">
+                                    <span className="info-label">Username:</span> {userData.login.username}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="user-info">
+                                    <span className="info-label">Email:</span> {userData.email}
+                                </span>
+                            </p>
+                            <p>
+                                <span className="user-info">
+                                    <span className="info-label">MD5:</span> {userData.login.md5}
+                                </span>
+                            </p>
                         </div>
                     )}
                 </div>
+
             </div>
         </div>
     );
