@@ -5,6 +5,7 @@ import { useState } from "react";
 import SearchInput from "./SearchInput";
 import PaginationButtons from "./PaginationButtons";
 import { Link } from 'react-router-dom';
+import {motion} from 'framer-motion';
 
 
 interface User {
@@ -40,7 +41,7 @@ export const UsersTable = () => {
     <div className="table-users">
       <SearchInput value={searchTerm} onChange={setSearchTerm} />
       <thead>
-        <tr>
+        <motion.tr animate={{}} initial={{}}>
           <th>ID</th>
           <th>First Name</th>
           <th>Last Name</th>
@@ -48,21 +49,28 @@ export const UsersTable = () => {
           <th>Date</th>
           <th>Age</th>
           <th>Actions</th>
-        </tr>
+        </motion.tr>
       </thead>
       <tbody>
         {filteredUsers.map((user: User) => (
-          <tr key={user.uuid}>
-            <td>{user.login.uuid}</td>
-            <td>{user.name.first}</td>
-            <td>{user.name.last}</td>
-            <td>{user.name.title}</td>
-            <td>{new Date(user.dob.date).toLocaleDateString()}</td>
-            <td>{user.dob.age}</td>
-            <td>
-              <Link to={`/user/${user.uuid}`}>View profile</Link>
-            </td>
-          </tr>
+           <motion.tr
+           key={user.uuid}
+           initial={{ opacity: 0, y: -10 }}
+           animate={{ opacity: 1, y: 0 }}
+           exit={{ opacity: 0, y: -10 }}
+           transition={{ duration: 0.5 }}
+           whileHover={{ scale: 1.05, backgroundColor:'rgba(129, 26, 192, 0.2)' }} // Aumenta a escala e altera a cor ao passar o mouse
+         >
+           <td>{user.login.uuid}</td>
+           <td>{user.name.first}</td>
+           <td>{user.name.last}</td>
+           <td>{user.name.title}</td>
+           <td>{new Date(user.dob.date).toLocaleDateString()}</td>
+           <td>{user.dob.age}</td>
+           <td>
+             <Link to={`/user/${user.uuid}`}>View profile</Link>
+           </td>
+         </motion.tr>
         ))}
       </tbody>
       <PaginationButtons currentPage={currentPage} totalPages={5} onPageChange={setCurrentPage} />
