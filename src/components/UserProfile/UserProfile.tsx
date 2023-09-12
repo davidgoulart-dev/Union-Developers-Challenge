@@ -41,87 +41,62 @@ const UserProfile: React.FC = () => {
                     <button className={activeTab === 'login' ? 'active' : ''} onClick={() => setActiveTab('login')}>Login</button>
                 </div>
                 <div className="tab-content">
-                    {activeTab === 'info' && (
-                        <div>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">First Name:</span> {userData.name.first}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Last Name:</span> {userData.name.last}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Email:</span> {userData.email}
-                                </span>
-                            </p>
-                        </div>
-                    )}
-                    {activeTab === 'location' && (
-                        <div>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Street:</span>{' '}
-                                    {userData.location.street.number} {userData.location.street.name}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">City:</span> {userData.location.city}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">State:</span> {userData.location.state}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Country:</span> {userData.location.country}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Postcode:</span> {userData.location.postcode}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Coordinates:</span>{' '}
-                                    {userData.location.coordinates.latitude}, {userData.location.coordinates.longitude}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="api-info">
-                                    <span className="info-label">Timezone:</span>{' '}
-                                    {userData.location.timezone.offset} - {userData.location.timezone.description}
-                                </span>
-                            </p>
-                        </div>
-                    )}
-                    {activeTab === 'login' && (
-                        <div>
-                            <p>
-                                <span className="user-info">
-                                    <span className="info-label">Username:</span> {userData.login.username}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="user-info">
-                                    <span className="info-label">Email:</span> {userData.email}
-                                </span>
-                            </p>
-                            <p>
-                                <span className="user-info">
-                                    <span className="info-label">MD5:</span> {userData.login.md5}
-                                </span>
-                            </p>
-                        </div>
-                    )}
-                </div>
+  {activeTab === 'info' && (
+    <div className="user-info-container">
+      <p className="info">
+        <span className="info-label">First Name</span><br />
+         {userData.name.first}
+      </p>
+      <p>
+        <span className="info-label">Last Name</span><br /> {userData.name.last}
+      </p>
+      <p>
+        <span className="info-label">Email</span><br /> {userData.email}
+      </p>
+    </div>
+  )}
+  {activeTab === 'location' && (
+    <div className="api-info-container">
+      <p>
+        <span className="info-label">Street</span><br />
+        {userData.location.street.number} {userData.location.street.name}
+      </p>
+      <p>
+        <span className="info-label">City</span> <br />{userData.location.city}
+      </p>
+      <p>
+        <span className="info-label">State</span> <br />{userData.location.state}
+      </p>
+      <p>
+        <span className="info-label">Country</span><br /> {userData.location.country}
+      </p>
+      <p>
+        <span className="info-label">Postcode</span><br /> {userData.location.postcode}
+      </p>
+      <p>
+        <span className="info-label">Coordinates</span><br />
+        {userData.location.coordinates.latitude}, {userData.location.coordinates.longitude}
+      </p>
+      <p>
+        <span className="info-label">Timezone</span><br />
+        {userData.location.timezone.offset} - {userData.location.timezone.description}
+      </p>
+    </div>
+  )}
+  {activeTab === 'login' && (
+    <div className="user-info-container">
+      <p>
+        <span className="info-label">Username</span> <br />{userData.login.username}
+      </p>
+      <p>
+        <span className="info-label">Email</span><br /> {userData.email}
+      </p>
+      <p>
+        <span className="info-label">MD5</span> <br /> {userData.login.md5}
+      </p>
+    </div>
+  )}
+</div>
 
             </div>
         </div>
