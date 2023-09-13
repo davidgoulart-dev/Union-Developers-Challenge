@@ -34,7 +34,9 @@ const UserProfile: React.FC = () => {
             <Link className="back-button" to={`/`}>Back</Link>
 
             <UserAvatar user={userData} />
+            
             <div className="Profile">
+            
                 <div className="tabs">
                     <button className={activeTab === 'info' ? 'active' : ''} onClick={() => setActiveTab('info')}>Info</button>
                     <button className={activeTab === 'location' ? 'active' : ''} onClick={() => setActiveTab('location')}>Location</button>

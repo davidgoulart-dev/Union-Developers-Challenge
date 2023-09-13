@@ -40,7 +40,9 @@ export const UsersTable = () => {
   return (
     <div className="table-users">
       <SearchInput value={searchTerm} onChange={setSearchTerm} />
+         <hr className="hr" />
       <thead>
+   
         <motion.tr animate={{}} initial={{}}>
           <th>ID</th>
           <th>First Name</th>

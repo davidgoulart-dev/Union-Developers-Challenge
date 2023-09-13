@@ -13,6 +13,7 @@ const UserAvatar: React.FC<UserProps> = ({ user }) => {
             <img src={user.picture.large} alt={`${user.name.first} ${user.name.last}`} className="user-photo" />
             <p className="user-name">{user.name.first} {user.name.last}</p>
             <p className="user-title">{user.name.title}</p>
+            <hr className="hr" />
         </div>
     );
 }

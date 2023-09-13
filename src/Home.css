@@ -5,3 +5,15 @@ h1{
   font-weight: 700;
   margin-bottom: -40px;
 }
+
+
+.hr {
+  min-width: 100%;
+  border: 1px solid #2D2B2B;
+  margin-bottom: 19px;
+  display: absolute;
+  
+}
+body{
+  display: relative;
+}
